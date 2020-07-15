@@ -4,8 +4,7 @@ pipeline {
             steps {
                 dir('api-test'){
                     git 'https://github.com/phcunha87/rest-tests.git'
-                    echo 'mvn test'
-
+                    bat 'mvn test'
                 }
                 
             }
@@ -14,19 +13,13 @@ pipeline {
             steps {
                 dir('funcional-test'){
                     git 'https://github.com/phcunha87/FuncionalTeste.git'
-                    echo 'mvn test'
+                    bat 'mvn test'
 
                 }
                 
             }
         }
-        stage ('Deploy Prod') {
-            steps {
-                echo 'docker-compose build'
-                echo 'docker-compose up -d'
-            }
-        }
-       
+            
 	}
 }    
 	

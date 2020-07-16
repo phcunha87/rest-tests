@@ -6,6 +6,7 @@ pipeline {
                dir ('api-testes'){
                     git 'https://github.com/phcunha87/rest-tests.git'
                     bat 'mvn test'
+                    allure includeProperties: false, jdk: '', results: [[path: 'target/surefire-reports']]
 
                }
                 

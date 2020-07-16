@@ -7,7 +7,7 @@ pipeline {
                 bat 'mvn test'
             }
         }
-        post {
+        stage {
             always {
                 script {
                     allure includeProperties: false, jdk: '', results: [[path: 'target/surefire-reports']]

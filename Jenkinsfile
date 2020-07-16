@@ -19,12 +19,18 @@ pipeline {
                 }
                 
             }
+        }
+        stage ('ALLURE REPORT'){
+            steps {
+                post {
+                    always {
+                        allure includeProperties: false, jdk: '', results: [[path: 'target/surefire-reports']]
+
+                    }
+                }
+            }
         } 
-        post {
-            always {
-                allure includeProperties: false, jdk: '', results: [[path: 'target/surefire-reports']]
-            }            
-        }  
+        
     } 
 }    
  

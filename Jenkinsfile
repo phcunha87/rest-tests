@@ -13,15 +13,18 @@ pipeline {
                 bat 'mvn test'
             }
         }
-                        
+        post {
+            always {
+                script {
+                    allure includeProperties: false, jdk: '', results: [[path: 'target/surefire-reports']]
+                }
+                
+            }     
+        }               
     }
     
 } 
-post {
-    always {
-        allure includeProperties: false, jdk: '', results: [[path: 'target/surefire-reports']]
-    }
-}      
+ 
     
 	
 

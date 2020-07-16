@@ -6,9 +6,13 @@ pipeline {
                 git 'https://github.com/phcunha87/rest-tests.git'
                 bat 'mvn test'
             }
-
-        }            
-	
+        } 
+        stage ('TESTES FUNCIONAIS') {
+            steps {
+                git credentialsId: 'Git', url: 'https://github.com/phcunha87/testes-funcionais-dcoker.git'
+                bat 'mvn test'
+            }
+        }           
     } 
 }       
     

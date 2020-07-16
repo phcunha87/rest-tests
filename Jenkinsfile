@@ -22,11 +22,8 @@ pipeline {
         }
         stage ('ALLURE REPORT'){
             steps {
-                post {
-                    always {
-                        allure includeProperties: false, jdk: '', results: [[path: 'target/surefire-reports']]
-
-                    }
+                allure includeProperties: false, jdk: '', results: [[path: 'target/surefire-reports']]
+                    
                 }
             }
         } 

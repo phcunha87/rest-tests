@@ -13,13 +13,13 @@ pipeline {
                 bat 'mvn test'
             }
         }
-        stage {
-          steps {
-            script {
-              allure([includeProperties: false, jdk: '', properties: [], reportBuildPolicy: 'ALWAYS', results: [[path: 'target/allure-results']]])
+        stage ('ALLURE REPORT') {
+            steps {
+                bat 'mvn test'
+                bat 'allure serve allure includeProperties: false, jdk: '', results: [[path: 'target\\surefire-reports']]'
             }
         }
-        
+                
     }
     
 }       

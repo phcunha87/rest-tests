@@ -1,4 +1,4 @@
-package br.com.qa.core;
+package br.com.rest.core;
 
 import org.hamcrest.Matchers;
 import org.junit.BeforeClass;

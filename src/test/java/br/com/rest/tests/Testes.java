@@ -1,4 +1,4 @@
-package br.com.qa.tests;
+package br.com.rest.tests;
 
 import static io.restassured.RestAssured.given;
 
@@ -7,11 +7,10 @@ import java.util.Map;
 
 import org.junit.Test;
 
-import br.com.qa.core.BaseTest;
-import br.com.qa.pages.ContaPage;
+import br.com.rest.core.BaseTest;
+import br.com.rest.pages.ContaPage;
 
 public class Testes extends BaseTest{
-	
 	
 	
 	@Test
@@ -45,15 +44,18 @@ public class Testes extends BaseTest{
 		ContaPage cp = new ContaPage();
 		cp.setNome(CONTA_NAME);
 		
-		given()
+		Integer id = given()
 		  .header("Authorization","JWT " +token)
 		.body(cp)
 		  .when()
 		.post("/contas")
 		  .then()
 		.statusCode(201)
+		.extract().path("id")
 		;
 	}
+	
+	
 	
 	
 

@@ -6,6 +6,13 @@ pipeline {
                 git 'https://github.com/phcunha87/rest-tests.git'
                 bat 'mvn test'
             }
+        }
+        post {
+            always {
+                script {
+                    allure includeProperties: false, jdk: '', results: [[path: 'target/surefire-reports']]
+                } 
+            }
         } 
         stage ('TESTES FUNCIONAIS') {
             steps {

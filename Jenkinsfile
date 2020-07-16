@@ -31,7 +31,7 @@ pipeline {
         }
         stage ('ALLURE REPORT') {
             steps {
-                allure includeProperties: false, jdk: '', results: [[path: 'surefire-reports']]
+                allure includeProperties: false, jdk: '', results: [[path: 'target/allure-results']]
                 
             }
         }    

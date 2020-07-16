@@ -25,6 +25,7 @@ pipeline {
                 dir ('alure-qa'){
                     git credentialsId: 'Git', url: 'https://github.com/phcunha87/allure.git'
                     bat 'mvn test'
+                    allure includeProperties: false, jdk: '', results: [[path: 'target/surefire-reports']]
                 }
             }
         }

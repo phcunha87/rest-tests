@@ -24,7 +24,7 @@ pipeline {
             steps {
                 dir ('alure-qa'){
                     git credentialsId: 'Git', url: 'https://github.com/phcunha87/allure.git'
-                    bat 'mvn test'
+                    echo 'mvn test'
                    
                 }
             }

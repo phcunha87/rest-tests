@@ -1,4 +1,4 @@
-package br.com.rest.pages;
+package br.com.qa.rest.pages;
 
 public class ContaPage {
 	private String nome;

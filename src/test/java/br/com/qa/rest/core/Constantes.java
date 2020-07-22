@@ -1,4 +1,4 @@
-package br.com.rest.core;
+package br.com.qa.rest.core;
 
 import org.hamcrest.Matcher;
 

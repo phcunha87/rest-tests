@@ -1,4 +1,4 @@
-package br.com.rest.tests;
+package br.com.qa.rest.tests;
 
 import static io.restassured.RestAssured.given;
 
@@ -7,8 +7,8 @@ import java.util.Map;
 
 import org.junit.Test;
 
-import br.com.rest.core.BaseTest;
-import br.com.rest.pages.ContaPage;
+import br.com.qa.rest.core.BaseTest;
+import br.com.qa.rest.pages.ContaPage;
 
 public class Testes extends BaseTest{
 	

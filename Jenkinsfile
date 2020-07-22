@@ -5,7 +5,7 @@ pipeline {
            steps {
                dir ('api-testes'){
                     git 'https://github.com/phcunha87/rest-tests.git'
-                    bat 'mvn test'
+                    bat 'mvn clean test'
                }
                 
             }
